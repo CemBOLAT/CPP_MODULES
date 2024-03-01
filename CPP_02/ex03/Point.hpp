@@ -26,8 +26,8 @@ class	Point{
 		~Point();
 		Point(const float x, const float y);
 
-		Fixed getX(void) const;
-		Fixed getY(void) const;
+		Fixed	getX(void) const;
+		Fixed	getY(void) const;
 
 };
 

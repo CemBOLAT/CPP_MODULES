@@ -25,7 +25,7 @@ class	Fixed{
 		Fixed(const Fixed &fixed);
 		Fixed &operator=(const Fixed &fixed);
 
-		~Fixed();
+		~Fixed(); 
 
 		// Member functions
 		int		getRawBits(void) const;

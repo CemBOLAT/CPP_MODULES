@@ -13,14 +13,10 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) : fixedPointValue(0)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
+{ std::cout << "Default constructor called" << std::endl;}
 
 Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
-}
+{std::cout << "Destructor called" << std::endl;}
 
 Fixed::Fixed(const Fixed &fixed)
 {

@@ -15,7 +15,7 @@
 Fixed::Fixed(void) : fixedPointValue(0)
 { /* intentionally left empty */}
 
-Fixed::~Fixed(void){ /* intentionally left empty */}
+Fixed::~Fixed(void){ /* intentionally left empty  */}
 
 Fixed::Fixed(const Fixed &fixed)
 {

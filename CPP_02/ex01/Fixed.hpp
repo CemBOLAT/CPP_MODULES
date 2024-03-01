@@ -25,7 +25,7 @@ class	Fixed{
 		int	fixedPointValue;
 		static const int fractionalBits = 8;
 	public:
-		// Orthodox Canonial Form
+		// Orthodox Canonial Form 
 		Fixed();
 		Fixed(const Fixed &fixed);
 		Fixed &operator=(const Fixed &fixed);

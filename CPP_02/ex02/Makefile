@@ -1,6 +1,6 @@
 NAME:=ex02
 CC=c++
-CFLAGS=-Wall -Wextra -Werror -std=c++98
+CFLAGS= -Wall -Wextra -Werror -std=c++98
 FILES=main.cpp Fixed.cpp
 OBJ=$(FILES:.cpp=.o)
 

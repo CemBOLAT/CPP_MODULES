@@ -70,3 +70,4 @@ int main(){
 	std::cout << "min(g, h): " << Fixed::min(g, h) << std::endl;
 }
 
+ 

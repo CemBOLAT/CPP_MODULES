@@ -13,14 +13,11 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) : fixedPointValue(0)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
+{ std::cout << "Default constructor called" << std::endl;}
 
 Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
-}
+{std::cout << "Destructor called" << std::endl;}
+
 
 Fixed::Fixed(const Fixed &fixed)
 {
@@ -63,7 +60,7 @@ Fixed::Fixed(const unsigned int nbr){
 	this->setRawBits(roundf(nbr * (DEFAULT_BIT_SHIFT << this->fractionalBits)));
 }
 
-float Fixed::toFloat(void) const
+float Fixed::toFloat(void) const 
 {
 	return ((float)this->getRawBits() / (DEFAULT_BIT_SHIFT << this->fractionalBits));
 }
