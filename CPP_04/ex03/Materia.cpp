@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Materia.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:14:38 by cbolat            #+#    #+#             */
-/*   Updated: 2024/02/07 20:37:22 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/22 13:50:36 by cbolat            #+#    #+#             */
+/*   Updated: 2023/09/22 13:52:18 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Materia.hpp"
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
-
-#include "./Weapon.hpp"
-
-class HumanB
+Materia::Materia()
 {
-	private:
-		std::string	name;
-		Weapon		*weapon;
-	public:
-		HumanB(const std::string &name);
+	_type = "materia";
+}
 
-		~HumanB();
+Materia::Materia(std::string const & type)
+{
+	_type = type;
+}
 
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	*getWeapon();
-};
+Materia::Materia(Materia const & src)
+{
+	*this = src;
+}
 
-#endif
-
-
+Materia	&Materia::operator=(Materia const & rhs)
+{
+	_type = rhs._type;
+	return (*this);
+}
 

@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:14:38 by cbolat            #+#    #+#             */
-/*   Updated: 2024/02/07 20:37:22 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/22 13:45:39 by cbolat            #+#    #+#             */
+/*   Updated: 2023/10/07 18:29:33 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cure.hpp"
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
-
-#include "./Weapon.hpp"
-
-class HumanB
+Cure::Cure()
 {
-	private:
-		std::string	name;
-		Weapon		*weapon;
-	public:
-		HumanB(const std::string &name);
+	_type = "cure";
+}
 
-		~HumanB();
+Cure::Cure(std::string const & type)
+{
+	_type = type;
+}
 
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	*getWeapon();
-};
+Cure::Cure(Cure const & src)
+{
+	*this = src;
+}
 
-#endif
+Cure	&Cure::operator=(Cure const & rhs)
+{
+	_type = rhs._type;
+	return (*this);
+}
 
+AMateria* Cure::clone() const
+{
+	return (new Cure(*this));
+}
 
-
+void Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

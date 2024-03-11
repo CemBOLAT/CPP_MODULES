@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Aanimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:14:38 by cbolat            #+#    #+#             */
-/*   Updated: 2024/02/07 20:37:22 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/12 17:11:01 by cbolat            #+#    #+#             */
+/*   Updated: 2023/10/07 17:20:26 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef AAANIMAL_HPP
+# define AAANIMAL_HPP
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#include <iostream>
 
-#include "./Weapon.hpp"
-
-class HumanB
-{
-	private:
-		std::string	name;
-		Weapon		*weapon;
+class Aanimal{
+	protected:
+		std::string	type;
 	public:
-		HumanB(const std::string &name);
+		Aanimal();
+		virtual ~Aanimal();
+		Aanimal(const Aanimal &obj);
+		Aanimal		&operator=(const Aanimal &obj);
+		void		setType(std::string type);
+		std::string	getType(void) const;
+		virtual void makeSound(void) const = 0;
 
-		~HumanB();
-
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	*getWeapon();
 };
 
 #endif
-
-
-

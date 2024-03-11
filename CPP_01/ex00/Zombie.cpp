@@ -12,7 +12,7 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string names){
+Zombie::Zombie(const std::string &names){
 	this->name = names;
 	std::cout << this->name << " is created !" << std::endl;
 }

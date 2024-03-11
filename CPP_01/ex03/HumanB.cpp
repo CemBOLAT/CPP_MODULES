@@ -30,7 +30,7 @@ void	HumanB::attack(void)
 	return ;
 }
 
-HumanB::HumanB(std::string name) : name(name)
+HumanB::HumanB(const std::string &name) : name(name)
 {
 	std::cout << name << " named HumanB created ! " << std::endl;
 	this->name = name;

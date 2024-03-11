@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 21:49:00 by cbolat            #+#    #+#             */
-/*   Updated: 2023/09/18 14:33:27 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/12 17:50:08 by cbolat            #+#    #+#             */
+/*   Updated: 2023/10/07 17:10:06 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-#include <iostream>
+# include <iostream>
 
-class Weapon{
-	private:
+class WrongAnimal{
+	protected:
 		std::string	type;
 	public:
-		Weapon(const std::string &name);
-		~Weapon();
+		// 	Orthodox canonical class form
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal &obj);
+		WrongAnimal		&operator=(const WrongAnimal &obj);
+		virtual			~WrongAnimal();
 
-		std::string	getType(void);
-		void		setType(std::string type);
+		void			setType(std::string type);
+		std::string		getType(void) const;
+		void			makeSound(void) const; // different from Animal
+
 };
 
-#endif
+# endif

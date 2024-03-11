@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:14:38 by cbolat            #+#    #+#             */
-/*   Updated: 2024/02/07 20:37:22 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/22 13:44:14 by cbolat            #+#    #+#             */
+/*   Updated: 2023/09/22 13:44:38 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CURE_HPP
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+# define CURE_HPP
 
-#include "./Weapon.hpp"
+# include <iostream>
 
-class HumanB
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
+# include "IMateriaSource.hpp"
+
+class Cure : public AMateria
 {
-	private:
-		std::string	name;
-		Weapon		*weapon;
 	public:
-		HumanB(const std::string &name);
+		Cure();
+		Cure(std::string const & type);
+		Cure(Cure const & src);
+		Cure & operator=(Cure const & rhs);
 
-		~HumanB();
 
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	*getWeapon();
+		virtual ~Cure() {}
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter& target);
 };
 
 #endif
-
-
-

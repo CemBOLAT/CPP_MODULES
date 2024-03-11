@@ -14,7 +14,7 @@
 #include "HumanA.hpp"
 
 
-HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon)
+HumanA::HumanA(const std::string &name, Weapon &weapon) : name(name), weapon(weapon)
 {
 	std::cout << name << " named HumanA created ! " << std::endl;
 }

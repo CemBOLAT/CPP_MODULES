@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:14:38 by cbolat            #+#    #+#             */
-/*   Updated: 2024/02/07 20:37:22 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/12 17:17:04 by cbolat            #+#    #+#             */
+/*   Updated: 2023/10/07 17:08:52 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include "./Weapon.hpp"
-
-class HumanB
-{
-	private:
-		std::string	name;
-		Weapon		*weapon;
-	public:
-		HumanB(const std::string &name);
-
-		~HumanB();
-
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	*getWeapon();
+# include "Animal.hpp"
+class Dog : public Animal{
+	public :
+		// 	Orthodox canonical class form
+		Dog();
+		Dog(const Dog &obj);
+		Dog &operator=(const Dog &obj);
+		~Dog();
+		// 	Member functions
+		void makeSound(void) const;
 };
 
 #endif
-
-
-

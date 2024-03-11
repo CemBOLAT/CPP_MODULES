@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:14:38 by cbolat            #+#    #+#             */
-/*   Updated: 2024/02/07 20:37:22 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/12 17:16:29 by cbolat            #+#    #+#             */
+/*   Updated: 2023/09/12 18:05:04 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-#include "./Weapon.hpp"
+class Cat : public Animal{
+	private :
+		Brain	*brain;
+	public :
+		Cat();
+		~Cat();
+		Cat(const Cat &obj);
+		Cat &operator=(const Cat &obj);
+		void makeSound(void) const;
 
-class HumanB
-{
-	private:
-		std::string	name;
-		Weapon		*weapon;
-	public:
-		HumanB(const std::string &name);
-
-		~HumanB();
-
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	*getWeapon();
 };
 
 #endif
-
-
-

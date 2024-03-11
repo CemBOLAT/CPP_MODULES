@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbolat <cbolat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 22:14:38 by cbolat            #+#    #+#             */
-/*   Updated: 2024/02/07 20:37:22 by cbolat           ###   ########.fr       */
+/*   Created: 2023/09/12 17:11:01 by cbolat            #+#    #+#             */
+/*   Updated: 2023/10/07 16:49:29 by cbolat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#include <iostream>
 
-#include "./Weapon.hpp"
-
-class HumanB
-{
-	private:
-		std::string	name;
-		Weapon		*weapon;
+class Animal{
+	protected:
+		std::string	type;
 	public:
-		HumanB(const std::string &name);
+		// Orthodox Cannonical Form
+		Animal();
+		Animal(const Animal &obj);
+		Animal			&operator=(const Animal &obj);
+		virtual			~Animal();
 
-		~HumanB();
+		// Getter - Setter
+		void			setType(std::string type);
+		std::string		getType(void) const;
+		// Member Function
+		virtual void	makeSound(void) const;
 
-		void	attack();
-		void	setWeapon(Weapon &weapon);
-		Weapon	*getWeapon();
 };
 
 #endif
-
-
-
