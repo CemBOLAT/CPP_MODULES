@@ -12,24 +12,23 @@
 
 #include "Materia.hpp"
 
-Materia::Materia()
+Materia::Materia() : AMateria()
 {
-	_type = "materia";
 }
 
-Materia::Materia(std::string const & type)
+Materia::Materia(std::string const & type) : AMateria(type)
 {
-	_type = type;
 }
 
-Materia::Materia(Materia const & src)
+Materia::Materia(Materia const & src) : AMateria(src)
 {
 	*this = src;
 }
 
 Materia	&Materia::operator=(Materia const & rhs)
 {
-	_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 }
 

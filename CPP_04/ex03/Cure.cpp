@@ -12,24 +12,23 @@
 
 #include "Cure.hpp"
 
-Cure::Cure()
+Cure::Cure() : AMateria("cure")
 {
-	_type = "cure";
 }
 
-Cure::Cure(std::string const & type)
+Cure::Cure(std::string const & type) : AMateria(type)
 {
-	_type = type;
 }
 
-Cure::Cure(Cure const & src)
+Cure::Cure(Cure const & src) : AMateria(src)
 {
 	*this = src;
 }
 
 Cure	&Cure::operator=(Cure const & rhs)
 {
-	_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 }
 

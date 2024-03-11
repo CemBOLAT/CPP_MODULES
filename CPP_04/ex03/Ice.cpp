@@ -2,24 +2,23 @@
 #include "Ice.hpp"
 #include "AMateria.hpp"
 
-Ice::Ice()
+Ice::Ice() : AMateria("ice")
 {
-	this->_type = "ice";
 }
 
-Ice::Ice(std::string const & type)
+Ice::Ice(std::string const & type) : AMateria(type)
 {
-	this->_type = type;
 }
 
-Ice::Ice(Ice const & src)
+Ice::Ice(Ice const & src) : AMateria(src)
 {
 	*this = src;
 }
 
 Ice	&Ice::operator=(Ice const & rhs)
 {
-	_type = rhs._type;
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 }
 

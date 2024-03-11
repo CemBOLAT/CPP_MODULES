@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : AAnimal()
 {
 	std::cout << "Cat constructor called" << std::endl;
 	this->type = "Cat";
@@ -25,10 +25,12 @@ Cat::~Cat()
 	delete this->brain;
 }
 
-Cat::Cat(const Cat &obj)
+Cat::Cat(const Cat &obj) : AAnimal(obj)
 {
-	std::cout << "Cat copy constructor called" << std::endl;
-	*this = obj;
+	std::cout << "Cat copy (deep) constructor called" << std::endl;
+	this->type = obj.type;
+	this->brain = new Brain();
+	this->brain->setIdeas(obj.brain->getIdeas(0));
 }
 
 Cat &Cat::operator=(const Cat &obj)
@@ -36,6 +38,10 @@ Cat &Cat::operator=(const Cat &obj)
 	std::cout << "Cat assignation operator called" << std::endl;
 	if (this != &obj)
 		this->type = obj.type;
+	if (this->brain)
+		delete this->brain;
+	this->brain = new Brain();
+	this->brain->setIdeas(obj.brain->getIdeas(0));
 	return (*this);
 }
 

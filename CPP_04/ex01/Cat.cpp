@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	std::cout << "Cat constructor called" << std::endl;
 	this->type = "Cat";
@@ -26,7 +26,7 @@ Cat::~Cat()
 }
 
 // deep copy constructor
-Cat::Cat(const Cat &obj)
+Cat::Cat(const Cat &obj) : Animal(obj)
 {
 	std::cout << "Cat copy (deep) constructor called" << std::endl;
 	this->type = obj.type;
@@ -39,6 +39,10 @@ Cat &Cat::operator=(const Cat &obj)
 	std::cout << "Cat assignation operator called" << std::endl;
 	if (this != &obj)
 		this->type = obj.type;
+	if (this->brain)
+		delete this->brain;
+	this->brain = new Brain();
+	this->brain->setIdeas(obj.brain->getIdeas(0));
 	return (*this);
 }
 

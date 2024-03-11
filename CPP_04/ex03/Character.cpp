@@ -5,30 +5,21 @@
 #include "ICharacter.hpp"
 #include "Character.hpp"
 
-Character::Character()
+Character::Character() : ICharacter()
 {
-	this->_name = "Default";
 	for (int i = 0; i < 4; i++)
 		this->_materias[i] = NULL;
 }
 
-Character::Character(std::string const & name)
+Character::Character(std::string const & name) : ICharacter() , _name(name)
 {
-	this->_name = name;
 	for (int i = 0; i < 4; i++)
 		this->_materias[i] = NULL;
 }
 
-Character::Character(Character const & src)
+Character::Character(Character const & src) : ICharacter(src)
 {
-	this->_name = src._name;
-	for (int i = 0; i < 4; i++)
-	{
-		if (src._materias[i])
-			this->_materias[i] = src._materias[i]->clone();
-		else
-			this->_materias[i] = NULL;
-	}
+	*this = src;
 }
 
 Character & Character::operator=(Character const & rhs)

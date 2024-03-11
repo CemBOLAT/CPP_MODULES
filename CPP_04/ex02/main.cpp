@@ -16,8 +16,8 @@
 /*
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 
 	delete j;//should not create a leak
 	delete i;
@@ -30,7 +30,15 @@ int main()
 # define MAX_ANIMALS 4
 
 int main(){
-	Animal	*(animals[MAX_ANIMALS]);
+	Dog	dog = Dog();
+	Cat	cat = Cat();
+	Dog	dog2 = Dog(dog);
+	Cat	cat2 = Cat(cat);
+	Dog	dog3 = Dog();
+	cat2 = cat;
+	dog3 = dog;
+	
+	AAnimal	**animals = new AAnimal*[MAX_ANIMALS];
 
 	for (int i = 0; i < MAX_ANIMALS / 2; i++)
 		animals[i] = new Dog();
@@ -38,5 +46,6 @@ int main(){
 		animals[i] = new Cat();
 	for (int i = 0; i < MAX_ANIMALS; i++)
 		delete animals[i];
+	delete [] animals;
 	return 0;
 }
